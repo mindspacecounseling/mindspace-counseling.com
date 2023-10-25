@@ -11,6 +11,11 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
+  pre = "envelope"
+  url = "mailto:DaniDimit@gmail.com"
+  weight = 50
+
+[[main]]
   name = "Blog"
   pageRef = "blog"
   weight = 20
@@ -18,7 +23,7 @@
 [[main]]
   name = "Home"
   pageRef = "/"
-  weight = 10
+  weight = 15
 
   [[main]]
     name = "Parent"
