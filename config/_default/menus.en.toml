@@ -15,10 +15,10 @@
   url = "mailto:DaniDimit@gmail.com"
   weight = 50
 
-[[main]]
-  name = "Blog"
-  pageRef = "blog"
-  weight = 20
+#[[main]]
+#  name = "How We Can Help"
+#  pageRef = "blog"
+#  weight = 20
 
 [[main]]
   name = "Home"
@@ -26,19 +26,44 @@
   weight = 15
 
   [[main]]
-    name = "Parent"
+    name = "How We Can Help"
+    pageRef = "how"
     weight = 30
 
 [[main]]
-  name = "example sub-menu 1"
-  parent = "Parent"
-  pageRef = "sub1/"
+  name = "Anxiety"
+  parent = "How We Can Help"
+  pageRef = "anxiety"
   weight = 30
 
 [[main]]
-  name = "example sub-menu 2"
-  parent = "Parent"
-  pageRef = "sub2"
+  name = "Stress"
+  parent = "How We Can Help"
+  pageRef = "stress"
+  weight = 30
+
+[[main]]
+  name = "Life Transitions"
+  parent = "How We Can Help"
+  pageRef = "transitions"
+  weight = 30
+
+[[main]]
+  name = "Depression"
+  parent = "How We Can Help"
+  pageRef = "depression"
+  weight = 30
+
+[[main]]
+  name = "Marital/Relationships"
+  parent = "How We Can Help"
+  pageRef = "relationships"
+  weight = 30
+
+[[main]]
+  name = "Self-Esteem"
+  parent = "How We Can Help"
+  pageRef = "esteem"
   weight = 30
 
 #[[subnavigation]]
