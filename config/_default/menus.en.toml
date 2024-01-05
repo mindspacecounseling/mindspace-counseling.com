@@ -25,10 +25,15 @@
   pageRef = "/"
   weight = 15
 
-  [[main]]
-    name = "How We Can Help"
-    pageRef = "how"
-    weight = 30
+[[main]]
+  name = "About Us"
+  pageRef = "about"
+  weight = 20
+
+[[main]]
+  name = "How We Can Help"
+  pageRef = "how"
+  weight = 30
 
 [[main]]
   name = "Anxiety"
