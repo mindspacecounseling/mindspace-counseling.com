@@ -1,7 +1,4 @@
 ---
-title: "Our Specialties"
-description: ""
-
 cascade:
   showDate: false
   showAuthor: false

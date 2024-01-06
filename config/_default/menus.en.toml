@@ -10,11 +10,6 @@
 # overridden by providing a weight value. The menu will then be
 # ordered by weight from lowest to highest.
 
-[[main]]
-  pre = "envelope"
-  url = "mailto:DaniDimit@gmail.com"
-  weight = 50
-
 #[[main]]
 #  name = "How We Can Help"
 #  pageRef = "blog"
@@ -36,40 +31,9 @@
   weight = 30
 
 [[main]]
-  name = "Anxiety"
-  parent = "How We Can Help"
-  pageRef = "anxiety"
-  weight = 30
-
-[[main]]
-  name = "Stress"
-  parent = "How We Can Help"
-  pageRef = "stress"
-  weight = 30
-
-[[main]]
-  name = "Life Transitions"
-  parent = "How We Can Help"
-  pageRef = "transitions"
-  weight = 30
-
-[[main]]
-  name = "Depression"
-  parent = "How We Can Help"
-  pageRef = "depression"
-  weight = 30
-
-[[main]]
-  name = "Marital/Relationships"
-  parent = "How We Can Help"
-  pageRef = "relationships"
-  weight = 30
-
-[[main]]
-  name = "Self-Esteem"
-  parent = "How We Can Help"
-  pageRef = "esteem"
-  weight = 30
+  name = "Contact Us"
+  pageRef = "contact"
+  weight = 40
 
 #[[subnavigation]]
 #  name = "An interesting topic"
