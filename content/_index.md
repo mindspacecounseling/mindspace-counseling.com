@@ -1,7 +1,9 @@
 ---
 title: "Welcome to MindSpace-Counseling"
-description: ""
+description: "We are a fully telehealth therapy practice working with individuals who reside in Connecticut or Florida."
+
 ---
+
 <div class="text-xl">
 Welcome to MindSpace Counseling! We are a fully telehealth therapy practice working with individuals who reside in Connecticut or Florida.
 <hr>
