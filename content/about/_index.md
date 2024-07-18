@@ -13,11 +13,11 @@ cascade:
 
 ![Dani Dimitrova](img/dani.jpg)
 # Dani Dimitrova, LCSW
-Hi, I’m Dani and I have been practicing as a licensed clinical social worker for the past 10 years, working with individuals and families to overcome challenges, heal trauma and relationships, and reconnect to self and others. I am passionate about helping people to live their most authentic and purposeful lives. 
+Hi, I’m Dani and I have been practicing as a licensed clinical social worker since 2014, working with individuals, couples, and families to overcome challenges, heal trauma, and reconnect to self and others. I am passionate about helping people to live their most authentic and purposeful lives.
 
-I work with people who struggle with anxiety, overwhelm, trauma, and those just feeling stuck or facing the same challenges over and over again. My intention is to empower individuals to develop tools to navigate and master their inner and outer worlds and create lasting change. 
+I will help you understand what nourishes these unhelpful patterns in order to create meaningful change. Together, we will explore the root causes of these struggles to understand the reasons for these destructive cycles. We will investigate unhelpful thoughts and beliefs. You will gain a deeper understanding of self and learn techniques to restructure your thoughts and manage your mind.
 
-I will help you to explore your behaviors and relationships and gain the insight that you need to overcome destructive cycles and live the life that you want. We will investigate your unhelpful, often unconscious thoughts and beliefs. You will gain a deeper understanding of self and learn techniques to restructure your thoughts and manage your mind.
+My intention is to empower individuals to develop tools to navigate and master their inner and outer worlds and create lasting change. I provide an environment of non-judgmental support, authentic empathy and actionable insights. My goal is to assist you in developing your tools to hone inner strength and live a purposeful and fulfilling life.
 
 ![Heather Elder](img/heather.png)
 # Heather Elder, LMFT
