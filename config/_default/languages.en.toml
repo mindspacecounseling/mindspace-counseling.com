@@ -13,7 +13,7 @@ title = "MindSpace Counseling"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
- [author]
+ [params.author]
    name = "MindSpace Counseling"
 #   image = "img/blowfish_logo.png"
 #   headline = "I'm only human"
