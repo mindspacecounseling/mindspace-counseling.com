@@ -1,13 +1,12 @@
-languageCode = "en"
-languageName = "English"
-weight = 1
-title = "MindSpace Counseling"
-
-[params]
-  displayName = "EN"
-  isoCode = "en"
-  rtl = false
-  dateFormat = "2 January 2023"
+ [params]
+   languageCode = "en"
+   languageName = "English"
+   weight = 1
+   title = "MindSpace Counseling"
+   displayName = "EN"
+   isoCode = "en"
+   rtl = false
+   dateFormat = "2 January 2023"
   # logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   # description = "My awesome website"

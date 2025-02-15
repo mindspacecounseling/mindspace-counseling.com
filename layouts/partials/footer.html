@@ -38,7 +38,7 @@
       {{- else }}
       &copy;
       {{ now.Format "2006" }}
-      {{ .Params.Author.name | markdownify | emojify }}
+      {{ .Site.Author.name | markdownify | emojify }}
       {{- end }}
       MindSpace Counseling
     </p>
