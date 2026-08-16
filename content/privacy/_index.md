@@ -14,7 +14,7 @@ cascade:
 
 **THIS NOTICE DESCRIBES HOW MEDICAL INFORMATION ABOUT YOU MAY BE USED AND DISCLOSED AND HOW YOU CAN GET ACCESS TO THIS INFORMATION. PLEASE REVIEW IT CAREFULLY.**
 
-Effective date: **[CONFIRM: effective date]**
+Effective date: January 5, 2026
 
 MindSpace Counseling, LLC ("we," "us," "our") is required by law to protect the privacy
 of your health information, to give you this notice explaining our privacy practices, and
@@ -98,7 +98,6 @@ we follow the stricter state law.
 **Substance use disorder records.** Records that come to us from a federally assisted
 substance use disorder treatment program carry additional protections under 42 CFR Part 2.
 We will not redisclose those records except as Part 2 permits.
-**[CONFIRM: keep this section only if you treat SUD or receive Part 2 records from other providers.]**
 
 ---
 
@@ -172,14 +171,13 @@ examiner, or funeral director when an individual dies.
 
 ## Telehealth and information we collect online
 
-All of our sessions are delivered by video. We use **[CONFIRM: name your video platform]**
+All of our sessions are delivered by video. We use **[Simple Practice]**
 to conduct sessions, under a business associate agreement that requires the platform to
 protect your information.
 
 If you contact us through the form on this website, the information you submit — including
 your name, email address, phone number, and anything you tell us about why you are seeking
-therapy — is transmitted through our website's form provider and delivered to us by email.
-**[CONFIRM: see the note about the contact form before publishing this page.]**
+therapy — is transmitted through our website's form provider and delivered to us by email.ß
 
 We do not sell information collected through this website, and we do not use it for
 advertising.
