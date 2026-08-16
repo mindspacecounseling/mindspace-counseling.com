@@ -1,6 +1,7 @@
 ---
 title: "Anxiety"
-description: ""
+description: "Worry that won't switch off, overthinking, restlessness, trouble sleeping. We find the root causes and build tools that reduce the symptoms."
+weight: 10
 
 cascade:
   showDate: false

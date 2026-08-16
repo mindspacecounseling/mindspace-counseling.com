@@ -1,6 +1,7 @@
 ---
 title: "Self-Esteem"
-description: ""
+description: "Self-acceptance and self-respect are learned and practiced, not innate. You'll get structured support building a stable relationship with yourself."
+weight: 70
 
 cascade:
   showDate: false

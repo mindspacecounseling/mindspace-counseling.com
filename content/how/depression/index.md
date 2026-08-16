@@ -1,6 +1,7 @@
 ---
 title: "Depression"
-description: ""
+description: "Persistent sadness, hopelessness, numbness, or changes in sleep and appetite that are interfering with work, school, and relationships."
+weight: 20
 
 cascade:
   showDate: false

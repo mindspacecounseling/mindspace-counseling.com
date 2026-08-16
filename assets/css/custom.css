@@ -28,12 +28,228 @@
 	border: 2px black solid;
 }
 
-.footer-line {
-	display: flex;
-	align-items: center;
-	margin-top: 5px;
-	margin-bottom: 5px;
+
+/* ==========================================================================
+   Homepage — business layout
+   Tokens key off Blowfish's class-based dark mode (html.dark).
+   All selectors are ms- prefixed to stay clear of Tailwind utilities.
+   ========================================================================== */
+
+:root {
+  --ms-ground:       #F5F7F5;
+  --ms-raised:       #FFFFFF;
+  --ms-band:         #ECF1EF;
+  --ms-ink:          #14262A;
+  --ms-ink-soft:     #33484C;
+  --ms-muted:        #5C6F71;
+  --ms-line:         #D6E0DD;
+  --ms-accent:       #1B6E67;
+  --ms-accent-hover: #14544F;
+  --ms-accent-soft:  #CFE3DF;
+  --ms-accent-ink:   #0E3F3A;
+  --ms-on-accent:    #FFFFFF;
+  --ms-hero-ink:     #FFFFFF;
+  --ms-hero-soft:    #DCE8E5;
+  --ms-scrim-a:      rgba(12, 30, 32, 0.34);
+  --ms-scrim-b:      rgba(12, 30, 32, 0.72);
+  --ms-shadow:       0 1px 2px rgba(20,38,42,.06), 0 8px 24px rgba(20,38,42,.07);
+  --ms-shadow-lift:  0 2px 4px rgba(20,38,42,.08), 0 16px 40px rgba(20,38,42,.12);
+
+  --ms-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+
+  --ms-step--1: clamp(.8rem, .77rem + .12vw, .86rem);
+  --ms-step-0:  clamp(1rem, .96rem + .18vw, 1.09rem);
+  --ms-step-1:  clamp(1.18rem, 1.1rem + .35vw, 1.4rem);
+  --ms-step-2:  clamp(1.45rem, 1.3rem + .6vw, 1.85rem);
+  --ms-step-3:  clamp(1.85rem, 1.55rem + 1.2vw, 2.6rem);
+  --ms-step-4:  clamp(2.2rem, 1.7rem + 2.1vw, 3.4rem);
 }
-.footer-line p {
-	margin-left: 10px;
+
+html.dark {
+  --ms-ground:       #0F1A1C;
+  --ms-raised:       #16262A;
+  --ms-band:         #132125;
+  --ms-ink:          #EAF1EF;
+  --ms-ink-soft:     #C3D3D0;
+  --ms-muted:        #93A8A6;
+  --ms-line:         #27393D;
+  --ms-accent:       #74C0B6;
+  --ms-accent-hover: #98D4CB;
+  --ms-accent-soft:  #1D3B3A;
+  --ms-accent-ink:   #BFE3DC;
+  --ms-on-accent:    #08201E;
+  --ms-shadow:       0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.34);
+  --ms-shadow-lift:  0 2px 4px rgba(0,0,0,.45), 0 16px 40px rgba(0,0,0,.45);
 }
+
+/* Break out of the theme's max-w-7xl container so bands run edge to edge.
+   .ms-wrap re-centres the content inside each band. */
+/* 100vw counts the vertical scrollbar, so the breakout overhangs by its
+   width. Clip on <html> (the scrolling element). `clip` rather than `hidden`
+   so no new scroll container is made and sticky positioning still works. */
+html, body { overflow-x: clip; }
+.ms-home {
+  color: var(--ms-ink); line-height: 1.65;
+  width: 100vw; margin-inline: calc(50% - 50vw);
+}
+.ms-home h1, .ms-home h2, .ms-home h3 {
+  font-family: var(--ms-serif); font-weight: 600; line-height: 1.15;
+  letter-spacing: -.01em; text-wrap: balance; margin: 0; color: inherit;
+}
+.ms-home p { margin: 0; }
+.ms-wrap { width: 100%; max-width: 1080px; margin-inline: auto; padding-inline: clamp(1.1rem, 4vw, 2rem); }
+.ms-band { padding-block: clamp(3.5rem, 8vw, 6.5rem); background: var(--ms-ground); }
+.ms-band--raised { background: var(--ms-raised); border-block: 1px solid var(--ms-line); }
+.ms-band--tint { background: var(--ms-band); border-block: 1px solid var(--ms-line); }
+
+.ms-eyebrow {
+  font-size: var(--ms-step--1); text-transform: uppercase; letter-spacing: .11em;
+  font-weight: 600; color: var(--ms-accent);
+}
+.ms-lede { font-size: var(--ms-step-1); color: var(--ms-ink-soft); max-width: 60ch; }
+.ms-lede p + p { margin-top: 1rem; }
+.ms-head { display: flex; flex-direction: column; gap: .75rem; max-width: 62ch; margin-bottom: 2.75rem; }
+.ms-head h2 { font-size: var(--ms-step-3); }
+.ms-head > p:last-child { color: var(--ms-muted); }
+
+/* Buttons */
+.ms-btn {
+  display: inline-flex; align-items: center; gap: .5rem; font-weight: 600;
+  font-size: var(--ms-step-0); padding: .8rem 1.5rem; border-radius: 4px;
+  text-decoration: none; border: 2px solid transparent; cursor: pointer;
+  transition: background .18s, color .18s, border-color .18s;
+}
+.ms-btn--primary { background: var(--ms-accent); color: var(--ms-on-accent); border-color: var(--ms-accent); }
+.ms-btn--primary:hover { background: var(--ms-accent-hover); border-color: var(--ms-accent-hover); color: var(--ms-on-accent); }
+.ms-btn--ghost { border-color: currentColor; color: var(--ms-hero-ink); }
+.ms-btn--ghost:hover { background: rgba(255,255,255,.14); color: var(--ms-hero-ink); }
+.ms-btn:focus-visible { outline: 3px solid var(--ms-accent); outline-offset: 3px; }
+
+/* Hero */
+.ms-hero { position: relative; isolation: isolate; overflow: hidden; }
+.ms-hero__bg { position: absolute; inset: 0; z-index: -2; background-size: cover; background-position: center 38%; filter: saturate(.55) contrast(.94); }
+.ms-hero__scrim { position: absolute; inset: 0; z-index: -1; background: linear-gradient(105deg, var(--ms-scrim-b) 0%, var(--ms-scrim-b) 34%, var(--ms-scrim-a) 78%, var(--ms-scrim-a) 100%); }
+.ms-hero__inner { padding-block: clamp(4.5rem, 12vw, 8.5rem); }
+.ms-hero__content { max-width: 34rem; display: flex; flex-direction: column; gap: 1.4rem; }
+.ms-hero .ms-eyebrow { color: var(--ms-hero-soft); }
+.ms-hero h1 { font-size: var(--ms-step-4); color: var(--ms-hero-ink); }
+.ms-hero .ms-lede { color: var(--ms-hero-soft); }
+.ms-hero__cta { display: flex; gap: .85rem; flex-wrap: wrap; margin-top: .4rem; }
+.ms-hero__note { font-size: var(--ms-step--1); color: var(--ms-hero-soft); }
+
+/* Credential strip */
+.ms-creds { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--ms-line); border-block: 1px solid var(--ms-line); margin: 0; }
+.ms-cred { background: var(--ms-raised); padding: 1.6rem clamp(1.1rem, 3vw, 2rem); display: flex; flex-direction: column; gap: .3rem; }
+.ms-cred dt { font-size: var(--ms-step--1); text-transform: uppercase; letter-spacing: .09em; color: var(--ms-muted); font-weight: 600; }
+.ms-cred dd { margin: 0; font-family: var(--ms-serif); font-size: var(--ms-step-1); color: var(--ms-ink); }
+
+/* Specialty cards */
+.ms-grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(228px, 1fr)); gap: 1.1rem; }
+.ms-card {
+  background: var(--ms-raised); border: 1px solid var(--ms-line); border-radius: 6px;
+  padding: 1.6rem; display: flex; flex-direction: column; gap: .6rem;
+  text-decoration: none; color: inherit; box-shadow: var(--ms-shadow);
+  transition: transform .18s, box-shadow .18s, border-color .18s;
+}
+.ms-card:hover { transform: translateY(-3px); box-shadow: var(--ms-shadow-lift); border-color: var(--ms-accent); }
+.ms-card h3 { font-size: var(--ms-step-2); }
+.ms-card p { color: var(--ms-muted); font-size: var(--ms-step--1); line-height: 1.6; }
+.ms-card__more { margin-top: auto; padding-top: .5rem; color: var(--ms-accent); font-weight: 600; font-size: var(--ms-step--1); }
+
+/* Therapists */
+.ms-grid-people { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; }
+.ms-person { background: var(--ms-raised); border: 1px solid var(--ms-line); border-radius: 6px; overflow: hidden; box-shadow: var(--ms-shadow); display: flex; flex-direction: column; }
+.ms-person__top { display: flex; gap: 1.1rem; align-items: center; padding: 1.5rem 1.5rem 0; }
+.ms-person__photo { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; flex: none; border: 3px solid var(--ms-accent-soft); margin: 0; }
+.ms-person__id h3 { font-size: var(--ms-step-2); }
+.ms-person__id p { font-size: var(--ms-step--1); color: var(--ms-accent); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.ms-person__body { padding: 1.1rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: .9rem; }
+.ms-person__body p { color: var(--ms-ink-soft); font-size: var(--ms-step--1); line-height: 1.7; }
+.ms-person__lic { color: var(--ms-muted) !important; }
+.ms-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+.ms-tag { font-size: .74rem; text-transform: uppercase; letter-spacing: .07em; font-weight: 600; color: var(--ms-accent-ink); background: var(--ms-accent-soft); padding: .25rem .6rem; border-radius: 3px; }
+
+/* Steps */
+.ms-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.75rem; counter-reset: ms-step; }
+.ms-step { display: flex; flex-direction: column; gap: .6rem; padding-top: 1.2rem; border-top: 3px solid var(--ms-accent); counter-increment: ms-step; }
+.ms-step::before { content: "Step " counter(ms-step); font-size: var(--ms-step--1); text-transform: uppercase; letter-spacing: .1em; font-weight: 700; color: var(--ms-accent); }
+.ms-step h3 { font-size: var(--ms-step-2); }
+.ms-step p { color: var(--ms-muted); font-size: var(--ms-step--1); }
+
+/* Fees & insurance */
+.ms-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; margin-bottom: 2.75rem; align-items: start; }
+.ms-panel { background: var(--ms-raised); border: 1px solid var(--ms-line); border-radius: 6px; padding: 1.6rem; box-shadow: var(--ms-shadow); }
+/* Standalone: /fees/ has no .ms-home ancestor, so set the face here too. */
+.ms-panel h3 { font-family: var(--ms-serif); font-weight: 600; letter-spacing: -.01em;
+               font-size: var(--ms-step-2); margin: 0 0 1.1rem; }
+.ms-panel .ms-rate, .ms-panel .ms-plans, .ms-panel .ms-pills { margin: 0; }
+.ms-rate { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .75rem 0; border-bottom: 1px solid var(--ms-line); }
+.ms-rate:last-of-type { border-bottom: 0; }
+.ms-rate__name { color: var(--ms-ink-soft); font-weight: 600; }
+.ms-rate__name small { display: block; color: var(--ms-muted); font-size: .78rem; font-weight: 400; line-height: 1.5; }
+.ms-rate__price { font-family: var(--ms-serif); font-size: var(--ms-step-2); color: var(--ms-accent); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ms-panel__note { margin-top: 1rem; font-size: var(--ms-step--1); color: var(--ms-muted); line-height: 1.6; }
+.ms-plans { display: flex; flex-direction: column; gap: 1.3rem; }
+.ms-plans__state { font-size: var(--ms-step--1); text-transform: uppercase; letter-spacing: .09em; font-weight: 700; color: var(--ms-muted); margin-bottom: .55rem; }
+.ms-pills { display: flex; flex-wrap: wrap; gap: .4rem; }
+.ms-pill { font-size: .8rem; font-weight: 600; color: var(--ms-accent-ink); background: var(--ms-accent-soft); border-radius: 3px; padding: .32rem .68rem; }
+.ms-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem 2.5rem; margin: 0; }
+.ms-fact { border-top: 1px solid var(--ms-line); padding-top: 1.1rem; display: flex; flex-direction: column; gap: .35rem; }
+.ms-fact dt { font-family: var(--ms-serif); font-size: var(--ms-step-1); color: var(--ms-ink); }
+.ms-fact dd { margin: 0; color: var(--ms-muted); font-size: var(--ms-step--1); line-height: 1.65; }
+
+/* Closing CTA */
+.ms-cta { background: var(--ms-accent); color: var(--ms-on-accent); }
+.ms-cta__inner { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between; }
+.ms-cta__text { max-width: 40ch; display: flex; flex-direction: column; gap: .7rem; }
+.ms-cta h2 { font-size: var(--ms-step-3); color: var(--ms-on-accent); }
+.ms-cta p { opacity: .92; }
+.ms-cta .ms-btn { background: var(--ms-on-accent); color: var(--ms-accent); border-color: var(--ms-on-accent); }
+.ms-cta .ms-btn:hover { opacity: .88; color: var(--ms-accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ms-card { transition: none; }
+  .ms-card:hover { transform: none; }
+}
+
+
+
+/* ==========================================================================
+   Site footer
+   Deliberately dark in BOTH themes: it closes the page under the teal CTA
+   band. Its colours are therefore literals, not the light/dark tokens.
+   ========================================================================== */
+
+.ms-footer {
+  width: 100vw; margin-inline: calc(50% - 50vw);
+  background: #14262A; color: #C9D8D5;
+  font-size: var(--ms-step--1); line-height: 1.65;
+}
+html.dark .ms-footer { background: #0C1719; border-top: 1px solid #24383C; }
+
+.ms-footer__inner { padding-block: 3.25rem 2rem; }
+.ms-footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 2rem; }
+.ms-footer__col { display: flex; flex-direction: column; }
+.ms-footer__head {
+  font-family: var(--ms-sans, inherit);
+  font-size: var(--ms-step--1); font-weight: 600; margin: 0 0 .7rem;
+  text-transform: uppercase; letter-spacing: .1em; color: #FFFFFF;
+}
+.ms-footer__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .45rem; }
+.ms-footer__list a { color: #C9D8D5; text-decoration: none; }
+.ms-footer__list a:hover { color: #FFFFFF; text-decoration: underline; text-underline-offset: 3px; }
+
+.ms-crisis {
+  margin-top: 2.5rem; padding: 1.1rem 1.3rem;
+  border: 1px solid #3C5457; border-left: 4px solid #E0A44A; border-radius: 4px;
+}
+.ms-crisis strong { color: #FFFFFF; font-weight: 600; }
+
+.ms-footer__legal {
+  margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #2A4144;
+  display: flex; flex-wrap: wrap; gap: .5rem 2rem; justify-content: space-between;
+  font-size: .78rem; color: #8FA4A2;
+}
+.ms-footer__legal p { margin: 0; }
+.ms-footer__legal a { color: #8FA4A2; }
+.ms-footer__legal a:hover { color: #FFFFFF; }

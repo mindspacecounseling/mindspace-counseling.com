@@ -1,19 +1,23 @@
- [params]
+ [languages.en.params]
    languageCode = "en"
    languageName = "English"
    weight = 1
-   title = "MindSpace Counseling"
+   # title = "MindSpace Counseling"
    displayName = "EN"
    isoCode = "en"
-   rtl = false
+   rtl = true
    dateFormat = "2 January 2023"
   # logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
+[params]
+title = "MindSpace Counseling, LLC."
+
+
  [params.author]
-   name = "MindSpace Counseling"
+   name = "MindSpace Counseling, LLC."
 #   image = "img/blowfish_logo.png"
 #   headline = "I'm only human"
 #   bio = "A little bit about you"
@@ -23,7 +27,7 @@
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
 #     { blogger = "https://username.blogspot.com/" },
-#     { codepen = "https://codepen.io/username" },
+#     { codepen = "https://codepen.io/username" },ß
 #     { dev = "https://dev.to/username" },
 #     { discord = "https://discord.gg/invitecode" },
 #     { dribbble = "https://dribbble.com/username" },

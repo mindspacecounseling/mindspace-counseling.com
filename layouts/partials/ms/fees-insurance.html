@@ -1,0 +1,38 @@
+{{/* Rates + accepted insurance. Shared by the homepage and /fees/.
+     Edit the values in config/_default/params.toml under [params.practice]. */}}
+{{ $p := .Site.Params.practice }}
+<div class="ms-cols">
+  <div class="ms-panel">
+    <h3>Self-pay rates</h3>
+    {{ range $p.rates }}
+      <div class="ms-rate">
+        <span class="ms-rate__name">
+          {{ .name }}
+          {{ with .note }}<small>{{ . }}</small>{{ end }}
+        </span>
+        <span class="ms-rate__price">{{ .price }}</span>
+      </div>
+    {{ end }}
+    {{ with $p.sessionlength }}
+      <p class="ms-panel__note">{{ . }}</p>
+    {{ end }}
+  </div>
+
+  <div class="ms-panel">
+    <h3>Insurance we accept</h3>
+    <div class="ms-plans">
+      {{ range $p.insurance }}
+        <div>
+          <p class="ms-plans__state">{{ .state }}</p>
+          <div class="ms-pills">
+            {{ range .plans }}<span class="ms-pill">{{ . }}</span>{{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    <p class="ms-panel__note">
+      Coverage, copays, and deductibles vary by plan. We'll verify your benefits
+      before your first session so there are no surprises.
+    </p>
+  </div>
+</div>

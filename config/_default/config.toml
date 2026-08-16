@@ -9,11 +9,13 @@ defaultContentLanguage = "en"
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
 enableRobotsTXT = true
-pagerSize = 10
-summaryLength = 0
 
+# summaryLength = 0  # leave unset: 0 blanks all RSS/meta descriptions
 buildDrafts = false
 buildFuture = true
+
+[pagination]
+pagerSize = 10
 
 #googleAnalytics = "G-XXXXXXXXX"
 

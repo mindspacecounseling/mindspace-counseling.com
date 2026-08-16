@@ -1,6 +1,7 @@
 ---
 title: "Trauma"
-description: ""
+description: "When your system stays stuck on an experience long after it ended. Therapy helps you re-process and heal in a safe environment."
+weight: 30
 
 cascade:
   showDate: false

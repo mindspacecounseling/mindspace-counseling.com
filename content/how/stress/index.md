@@ -1,6 +1,7 @@
 ---
 title: "Stress"
-description: ""
+description: "Too many expectations to balance. We identify the real sources and build realistic strategies before stress turns into burnout."
+weight: 60
 
 cascade:
   showDate: false

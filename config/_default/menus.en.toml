@@ -31,8 +31,35 @@
   weight = 30
 
 [[main]]
+  name = "Fees & Insurance"
+  pageRef = "fees"
+  weight = 35
+
+[[main]]
   name = "Contact Us"
   pageRef = "contact"
+  weight = 40
+
+# -- Footer Menu --
+# Renders as the "Practice" column in the site footer.
+[[footer]]
+  name = "Our Therapists"
+  pageRef = "about"
+  weight = 10
+
+[[footer]]
+  name = "Fees & Insurance"
+  pageRef = "fees"
+  weight = 20
+
+[[footer]]
+  name = "Contact Us"
+  pageRef = "contact"
+  weight = 30
+
+[[footer]]
+  name = "Privacy & HIPAA Notice"
+  pageRef = "privacy"
   weight = 40
 
 #[[subnavigation]]

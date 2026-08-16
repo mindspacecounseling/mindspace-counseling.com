@@ -1,6 +1,7 @@
 ---
 title: "Marital & Relationships"
-description: ""
+description: "Understanding your own desires and wounds, plus concrete tools for communication and conflict resolution that build lasting connection."
+weight: 40
 
 cascade:
   showDate: false

@@ -31,7 +31,7 @@ defaultBackgroundImage = "background.jpg" # used as default for background image
   showMenu = true
   showCopyright = true
   showThemeAttribution = false
-  showAppearanceSwitcher = false
+  showAppearanceSwitcher =true
   showScrollToTop = true
 
 [homepage]
@@ -138,3 +138,32 @@ defaultBackgroundImage = "background.jpg" # used as default for background image
   # bing = ""
   # pinterest = ""
   # yandex = ""
+
+# -- Practice details --
+# Rates and accepted insurance. Rendered by layouts/partials/ms/fees-insurance.html
+# on the homepage and on /fees/. Keys are lowercase: Hugo normalises config keys.
+[practice]
+  sessionlength = "Sessions run 50–60 minutes — most often a full hour."
+
+  [[practice.rates]]
+    name  = "Consultation"
+    note  = "Introductory call, 15 minutes"
+    price = "Free"
+
+  [[practice.rates]]
+    name  = "Initial intake"
+    note  = "First full session"
+    price = "$150"
+
+  [[practice.rates]]
+    name  = "Ongoing session"
+    note  = "Individual, couples, or family — same rate"
+    price = "$125"
+
+  [[practice.insurance]]
+    state = "Connecticut"
+    plans = ["Aetna", "Anthem BCBS", "ConnectiCare", "Cigna", "UnitedHealthcare", "UBH"]
+
+  [[practice.insurance]]
+    state = "Florida"
+    plans = ["Aetna", "Anthem BCBS", "ConnectiCare", "Cigna", "UnitedHealthcare", "UBH", "Florida Blue"]

@@ -1,6 +1,7 @@
 ---
 title: "Life Transitions"
-description: ""
+description: "Moving, graduating, a new job, marriage, a new baby, loss. Even welcome change can leave you disoriented — we help you adjust and move forward."
+weight: 50
 
 cascade:
   showDate: false
