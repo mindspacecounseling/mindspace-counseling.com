@@ -34,13 +34,18 @@
     </div>
   </section>
 
-  {{/* ---------------- Credentials ---------------- */}}
-  <dl class="ms-creds">
-    <div class="ms-cred"><dt>Licensed in</dt><dd>Connecticut &amp; Florida</dd></div>
-    <div class="ms-cred"><dt>Clinical experience</dt><dd>10+ years each</dd></div>
-    <div class="ms-cred"><dt>Free consultation</dt><dd>15 minutes, no cost</dd></div>
-    <div class="ms-cred"><dt>Who we see</dt><dd>Individuals, couples, families</dd></div>
-  </dl>
+  {{/* ---------------- Credentials ----------------
+       The band runs edge to edge; the <dl> inside it is capped to the same
+       column as every .ms-wrap section so the values stay aligned with the
+       rest of the page. */}}
+  <div class="ms-creds-band">
+    <dl class="ms-creds">
+      <div class="ms-cred"><dt>Licensed in</dt><dd>Connecticut &amp; Florida</dd></div>
+      <div class="ms-cred"><dt>Clinical experience</dt><dd>10+ years each</dd></div>
+      <div class="ms-cred"><dt>Free consultation</dt><dd>15 minutes, no cost</dd></div>
+      <div class="ms-cred"><dt>Who we see</dt><dd>Individuals, couples, families</dd></div>
+    </dl>
+  </div>
 
   {{/* ---------------- Specialties ---------------- */}}
   {{ with .Site.GetPage "how" }}

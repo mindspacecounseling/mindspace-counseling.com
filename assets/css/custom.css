@@ -137,11 +137,23 @@ html, body { overflow-x: clip; }
 .ms-hero__cta { display: flex; gap: .85rem; flex-wrap: wrap; margin-top: .4rem; }
 .ms-hero__note { font-size: var(--ms-step--1); color: var(--ms-hero-soft); }
 
-/* Credential strip */
-.ms-creds { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--ms-line); border-block: 1px solid var(--ms-line); margin: 0; }
-.ms-cred { background: var(--ms-raised); padding: 1.6rem clamp(1.1rem, 3vw, 2rem); display: flex; flex-direction: column; gap: .3rem; }
-.ms-cred dt { font-size: var(--ms-step--1); text-transform: uppercase; letter-spacing: .09em; color: var(--ms-muted); font-weight: 600; }
-.ms-cred dd { margin: 0; font-family: var(--ms-serif); font-size: var(--ms-step-1); color: var(--ms-ink); }
+/* Credential strip
+   The band is full-bleed, but the cells inside are capped at 1080px and centred
+   — the same column .ms-wrap gives every other section. The cell gutter uses the
+   identical clamp() as .ms-wrap's padding-inline, so the first and last values
+   land exactly on the page's text column instead of drifting out towards the
+   window edges as it is resized.
+   Two columns rather than four: inside the 1080px column a 4-up row leaves only
+   ~206px per cell, which splits "Connecticut & Florida" mid-phrase. The 44rem
+   breakpoint is where the longest value still fits a half-width cell on one
+   line. auto-fit is avoided entirely — it used to drop to three columns around
+   700-820px and strand the fourth cell alone across a full-width row. */
+.ms-creds-band { background: var(--ms-raised); border-block: 1px solid var(--ms-line); }
+.ms-creds { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--ms-line); width: 100%; max-width: 1080px; margin: 0 auto; }
+@media (min-width: 44rem) { .ms-creds { grid-template-columns: repeat(2, 1fr); } }
+.ms-cred { background: var(--ms-raised); padding: 1.6rem clamp(1.1rem, 4vw, 2rem); display: flex; flex-direction: column; gap: .3rem; }
+.ms-cred dt { font-size: var(--ms-step--1); text-transform: uppercase; letter-spacing: .09em; color: var(--ms-muted); font-weight: 600; text-wrap: balance; }
+.ms-cred dd { margin: 0; font-family: var(--ms-serif); font-size: var(--ms-step-1); color: var(--ms-ink); text-wrap: balance; }
 
 /* Specialty cards */
 .ms-grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(228px, 1fr)); gap: 1.1rem; }
