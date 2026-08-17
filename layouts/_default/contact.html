@@ -1,28 +1,82 @@
+{{/* /contact/ — appointment request.
+
+     Styles live in assets/css/custom.css under "Contact page"; the form itself
+     is layouts/partials/ms/contact-form.html. The sidebar exists to answer the
+     things people wonder about before they hit submit — how fast we reply, how
+     to reach us without the form, and which states we can see them in.
+
+     Band rhythm matches the homepage: tinted header, then the body on ground
+     so the white form panel separates from it. */}}
 {{ define "main" }}
-  <article class="max-w-full">
-  {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
-  {{ $heroStyle := .Params.heroStyle }}
-  {{ if not $heroStyle }}{{ $heroStyle = .Site.Params.article.heroStyle }}{{ end }}
-  {{ $heroStyle := print "hero/" $heroStyle ".html" }}
-  {{ if templates.Exists (printf "partials/%s" $heroStyle) }}
-  {{ partial $heroStyle . }}
-  {{ else }}
-  {{ partial "hero/basic.html" . }}
-  {{ end }}
-  {{ end }}
-    <header>
-      {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
-        {{ partial "breadcrumbs.html" . }}
-      {{ end }}
-      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        {{ .Title | emojify }}
-      </h1>
-    </header>
-    <section class="max-w-full mt-6 prose dark:prose-invert">
-      {{ .Content | emojify }}
-    </section>
-    <footer class="pt-8">
-      {{ partial "sharing-links.html" . }}
-    </footer>
-  </article>
+<div class="ms-page">
+
+  <section class="ms-band ms-band--tint">
+    <div class="ms-wrap">
+      <div class="ms-page__head">
+        <p class="ms-eyebrow">Contact us</p>
+        <h1>{{ .Title | emojify }}</h1>
+        <p class="ms-lede">
+          Reaching out is the hardest part. A few details is all we need to get
+          your free 15-minute consultation on the calendar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ms-band">
+    <div class="ms-wrap">
+      <div class="ms-contact-split">
+
+        <div class="ms-panel ms-form-panel">
+          {{ partial "ms/contact-form.html" . }}
+        </div>
+
+        <aside class="ms-aside">
+          <div class="ms-aside__block">
+            <h2 class="ms-aside__head">What happens next</h2>
+            <ol class="ms-nextsteps">
+              <li><span><strong>We read it, not a bot.</strong> One of us replies by
+                email or phone within one business day.</span></li>
+              <li><span><strong>A free 15-minute call.</strong> No cost, no
+                obligation &mdash; we listen and answer your questions.</span></li>
+              <li><span><strong>Your first session.</strong> If it&rsquo;s a good fit,
+                we book a time by secure video.</span></li>
+            </ol>
+          </div>
+
+          <div class="ms-aside__block">
+            <h2 class="ms-aside__head">Prefer to call or email?</h2>
+            <ul class="ms-direct">
+              <li>
+                <a href="tel:+12034906860">(203) 490-6860</a>
+                <span>Voicemail is checked daily</span>
+              </li>
+              <li>
+                <a href="mailto:dani.dimit@gmail.com">dani.dimit@gmail.com</a>
+                <span>Please keep clinical details out of email</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="ms-aside__block">
+            <h2 class="ms-aside__head">Before you write</h2>
+            <p>
+              We see clients located in <strong>Connecticut and Florida</strong>.
+              Most major plans are accepted &mdash;
+              <a href="{{ "fees" | relURL }}">see fees &amp; insurance</a>.
+            </p>
+          </div>
+
+          <p class="ms-note-urgent">
+            <strong>Not for emergencies.</strong> If you are in crisis, call or text
+            <strong>988</strong>, or call <strong>911</strong> if you or someone else
+            is in immediate danger.
+          </p>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</div>
 {{ end }}

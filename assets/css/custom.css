@@ -1,34 +1,3 @@
-.formbold-builder-form {
-}
-.formbold-builder-form form {
-	width: 100%;
-	display: flex;
-	flex-direction:column;
-}
-
-.formbold-builder-form div {
-	margin: 5px;
-}
-
-.fb-builder-item label {
-	display: block;
-}
-
-.fb-builder-item textarea, .fb-builder-item input {
-	width: 100%;
-	color: black;
-}
-
-#contact_submit_button {
-	margin-top: 20px;
-	height: 70px;
-	font-size: 1.5em;
-	width: 100%;
-	background: darkcyan;
-	border: 2px black solid;
-}
-
-
 /* ==========================================================================
    Homepage — business layout
    Tokens key off Blowfish's class-based dark mode (html.dark).
@@ -265,3 +234,99 @@ html.dark .ms-footer { background: #0C1719; border-top: 1px solid #24383C; }
 .ms-footer__legal p { margin: 0; }
 .ms-footer__legal a { color: #8FA4A2; }
 .ms-footer__legal a:hover { color: #FFFFFF; }
+
+
+/* ==========================================================================
+   Contact page
+   Same token set as the homepage bands, so /contact/ reads as part of the
+   site rather than a bare FormBold embed.
+   ========================================================================== */
+
+/* --- Page header -------------------------------------------------------- */
+.ms-page { color: var(--ms-ink); line-height: 1.65; width: 100vw; margin-inline: calc(50% - 50vw); }
+.ms-page h1, .ms-page h2, .ms-page h3 {
+  font-family: var(--ms-serif); font-weight: 600; line-height: 1.15;
+  letter-spacing: -.01em; text-wrap: balance; margin: 0; color: inherit;
+}
+.ms-page p { margin: 0; }
+.ms-page__head { display: flex; flex-direction: column; gap: .9rem; max-width: 60ch; }
+.ms-page__head h1 { font-size: var(--ms-step-3); }
+
+/* --- Form --------------------------------------------------------------- */
+.ms-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.ms-field { display: flex; flex-direction: column; gap: .45rem; }
+.ms-field-row { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+@media (min-width: 34rem) { .ms-field-row { grid-template-columns: 1fr 1fr; } }
+
+.ms-field label {
+  font-size: var(--ms-step--1); font-weight: 600; color: var(--ms-ink-soft);
+  text-transform: uppercase; letter-spacing: .09em;
+}
+.ms-req { color: var(--ms-accent); }
+
+.ms-field input,
+.ms-field textarea {
+  width: 100%; font: inherit; font-size: var(--ms-step-0);
+  color: var(--ms-ink); background: var(--ms-raised);
+  border: 1px solid var(--ms-line); border-radius: 4px;
+  padding: .7rem .9rem; line-height: 1.5;
+  transition: border-color .15s, box-shadow .15s;
+}
+.ms-field textarea { resize: vertical; min-height: 7.5rem; }
+.ms-field input::placeholder,
+.ms-field textarea::placeholder { color: var(--ms-muted); opacity: .85; }
+.ms-field input:hover,
+.ms-field textarea:hover { border-color: var(--ms-muted); }
+.ms-field input:focus,
+.ms-field textarea:focus {
+  outline: none; border-color: var(--ms-accent);
+  box-shadow: 0 0 0 3px var(--ms-accent-soft);
+}
+/* :focus-visible would drop the ring for pointer users; forms want it always. */
+
+.ms-field__hint,
+.ms-form__note { font-size: var(--ms-step--1); color: var(--ms-muted); line-height: 1.6; }
+.ms-form__submit { align-self: flex-start; margin-top: .25rem; }
+@media (max-width: 34rem) { .ms-form__submit { align-self: stretch; justify-content: center; } }
+
+/* Panel wrapper around the form. Reuses .ms-panel's face with more padding —
+   the form is the page's main subject, not a sidebar card. */
+.ms-form-panel { padding: clamp(1.5rem, 4vw, 2.5rem); }
+
+/* --- Reassurance sidebar ------------------------------------------------ */
+.ms-contact-split { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start; }
+@media (min-width: 60rem) { .ms-contact-split { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 2.5rem; } }
+
+.ms-aside { display: flex; flex-direction: column; gap: 1.75rem; }
+.ms-aside__block { display: flex; flex-direction: column; gap: .6rem; }
+.ms-aside__head {
+  font-size: var(--ms-step--1); text-transform: uppercase; letter-spacing: .1em;
+  font-weight: 700; color: var(--ms-muted); margin: 0;
+}
+.ms-aside p { color: var(--ms-ink-soft); font-size: var(--ms-step--1); line-height: 1.7; }
+.ms-aside p a { color: var(--ms-accent); font-weight: 600; text-decoration: none; }
+.ms-aside p a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.ms-nextsteps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1rem; counter-reset: ms-ns; }
+.ms-nextsteps li { display: grid; grid-template-columns: 1.75rem 1fr; gap: .75rem; counter-increment: ms-ns;
+                   font-size: var(--ms-step--1); color: var(--ms-ink-soft); line-height: 1.6; }
+.ms-nextsteps li::before {
+  content: counter(ms-ns); grid-row: span 2;
+  width: 1.75rem; height: 1.75rem; border-radius: 50%;
+  background: var(--ms-accent-soft); color: var(--ms-accent-ink);
+  display: grid; place-items: center; font-weight: 700; font-size: .78rem;
+}
+.ms-nextsteps strong { color: var(--ms-ink); font-weight: 600; }
+
+.ms-direct { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .5rem;
+             font-size: var(--ms-step--1); }
+.ms-direct a { color: var(--ms-accent); text-decoration: none; font-weight: 600; }
+.ms-direct a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ms-direct span { display: block; color: var(--ms-muted); font-weight: 400; }
+
+.ms-note-urgent {
+  border-left: 4px solid #E0A44A; background: var(--ms-band);
+  border-radius: 4px; padding: 1rem 1.2rem;
+  font-size: var(--ms-step--1); color: var(--ms-ink-soft); line-height: 1.65;
+}
+.ms-note-urgent strong { color: var(--ms-ink); }

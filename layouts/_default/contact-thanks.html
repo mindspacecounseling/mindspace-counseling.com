@@ -1,0 +1,77 @@
+{{/* /contact/thanks/ — where FormBold sends people after a successful submit.
+
+     Set this page's full URL as the "Redirect URL" in the FormBold dashboard
+     (Form Settings for form 3w5QY). Without it, FormBold shows its own generic
+     "Thanks!" page, whose Go Back button walks back into the reCAPTCHA step
+     instead of returning to the site.
+
+     Reuses the .ms-* classes from the homepage and /contact/. */}}
+{{ define "main" }}
+<div class="ms-page">
+
+  <section class="ms-band ms-band--tint">
+    <div class="ms-wrap">
+      <div class="ms-page__head">
+        <p class="ms-eyebrow">Request received</p>
+        <h1>{{ .Title | emojify }}</h1>
+        <p class="ms-lede">
+          One of us will be in touch within one business day to arrange your free
+          15-minute consultation. If you don&rsquo;t hear from us, please check your
+          spam folder before assuming it didn&rsquo;t arrive.
+        </p>
+        <div class="ms-hero__cta">
+          <a class="ms-btn ms-btn--primary" href="{{ "" | relURL }}">Back to the homepage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ms-band">
+    <div class="ms-wrap">
+      <div class="ms-head">
+        <p class="ms-eyebrow">What happens next</p>
+        <h2>Three steps, and you&rsquo;ve just done the first.</h2>
+      </div>
+      <div class="ms-steps">
+        <div class="ms-step">
+          <h3>We read it</h3>
+          <p>One of us &mdash; not a bot, not a front desk &mdash; replies by email or phone within one business day.</p>
+        </div>
+        <div class="ms-step">
+          <h3>Free 15-minute call</h3>
+          <p>No cost and no obligation. We hear what&rsquo;s going on, answer your questions, and match you with the right therapist.</p>
+        </div>
+        <div class="ms-step">
+          <h3>Your first session</h3>
+          <p>If it&rsquo;s a good fit, we book a time by secure video that works around your week.</p>
+        </div>
+      </div>
+
+      <div class="ms-cols" style="margin-top: 2.75rem; margin-bottom: 0;">
+        <div class="ms-aside__block">
+          <h3 class="ms-aside__head">While you wait</h3>
+          <ul class="ms-direct">
+            <li><a href="{{ "about" | relURL }}">Meet our therapists</a><span>Who you&rsquo;ll be working with</span></li>
+            <li><a href="{{ "fees" | relURL }}">Fees &amp; insurance</a><span>Rates and the plans we accept</span></li>
+            <li><a href="{{ "how" | relURL }}">How we can help</a><span>What we specialise in</span></li>
+          </ul>
+        </div>
+        <div class="ms-aside__block">
+          <h3 class="ms-aside__head">Need to reach us sooner?</h3>
+          <ul class="ms-direct">
+            <li><a href="tel:+12034906860">(203) 490-6860</a><span>Voicemail is checked daily</span></li>
+            <li><a href="mailto:dani.dimit@gmail.com">dani.dimit@gmail.com</a><span>Please keep clinical details out of email</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="ms-note-urgent" style="margin-top: 2rem;">
+        <strong>If you are in crisis, please don&rsquo;t wait for our reply.</strong>
+        Call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline), or call
+        <strong>911</strong> if you or someone else is in immediate danger.
+      </p>
+    </div>
+  </section>
+
+</div>
+{{ end }}
