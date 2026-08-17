@@ -11,7 +11,6 @@ cascade:
   layout: "simple"
 ---
 
-No one should have to send an email to find out what therapy costs.
 
 {{< fees >}}
 

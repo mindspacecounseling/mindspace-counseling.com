@@ -143,7 +143,7 @@ defaultBackgroundImage = "background.jpg" # used as default for background image
 # Rates and accepted insurance. Rendered by layouts/partials/ms/fees-insurance.html
 # on the homepage and on /fees/. Keys are lowercase: Hugo normalises config keys.
 [practice]
-  sessionlength = "Sessions run 50–60 minutes — most often a full hour."
+  sessionlength = "Sessions run 45–60 minutes"
 
   [[practice.rates]]
     name  = "Consultation"
@@ -156,7 +156,7 @@ defaultBackgroundImage = "background.jpg" # used as default for background image
     price = "$150"
 
   [[practice.rates]]
-    name  = "Ongoing session"
+    name  = "Ongoing sessions"
     note  = "Individual, couples, or family — same rate"
     price = "$125"
 
