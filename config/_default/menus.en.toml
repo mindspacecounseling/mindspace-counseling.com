@@ -57,10 +57,10 @@
   pageRef = "contact"
   weight = 30
 
-[[footer]]
-  name = "Privacy & HIPAA Notice"
-  pageRef = "privacy"
-  weight = 40
+#[[footer]]
+ # name = "Privacy & HIPAA Notice"
+ # pageRef = "privacy"
+ # weight = 40
 
 #[[subnavigation]]
 #  name = "An interesting topic"
