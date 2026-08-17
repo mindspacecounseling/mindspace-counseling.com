@@ -1,8 +1,9 @@
 {{/* Appointment request form. Shared by every /contact/ layout variant.
 
-     The `name` attributes are FormBold field IDs — they must match the form
-     definition at formbold.com/s/3w5QY exactly or submissions arrive unlabelled.
-     Do not rename them when editing the visible labels. */}}
+     The `name` attributes are what FormBold (formbold.com/s/3w5QY) uses to label
+     each field in the notification email, so they are written to read well there
+     rather than to match the visible <label> text. Changing a name changes the
+     label on every email from that point on — old submissions keep the old one. */}}
 <form class="ms-form"
       action="https://formbold.com/s/3w5QY"
       method="POST"
@@ -11,7 +12,7 @@
   <div class="ms-field">
     <label for="ms-name">Name <span class="ms-req" aria-hidden="true">*</span></label>
     <input id="ms-name" type="text" required
-           name="text_area_8385D8C1-89FB-4096-88D0-E370E1A805E6"
+           name="Enter Name"
            autocomplete="name" placeholder="First and last name" />
   </div>
 
@@ -19,13 +20,13 @@
     <div class="ms-field">
       <label for="ms-email">Email <span class="ms-req" aria-hidden="true">*</span></label>
       <input id="ms-email" type="email" required
-             name="email_input_07AD1428-4A3B-423A-A6B9-51566815A479"
+             name="Enter Email Address"
              autocomplete="email" placeholder="you@example.com" />
     </div>
     <div class="ms-field">
       <label for="ms-phone">Phone <span class="ms-req" aria-hidden="true">*</span></label>
       <input id="ms-phone" type="tel" required
-             name="phone_input_CF6D3AF5-2022-4535-8E8B-FBDC13471E75"
+             name="Enter Phone Number"
              autocomplete="tel" placeholder="(203) 555-0100" />
     </div>
   </div>
@@ -33,7 +34,7 @@
   <div class="ms-field">
     <label for="ms-reason">What brings you here? <span class="ms-req" aria-hidden="true">*</span></label>
     <textarea id="ms-reason" rows="5" required
-              name="text_area_F49FD689-87F4-4916-9B1C-A46BA77219D2"
+              name="How can we help?"
               placeholder="A sentence or two is plenty — we'll go deeper on the call."></textarea>
     <p class="ms-field__hint">
       Please don&rsquo;t include detailed medical information. This form is not
