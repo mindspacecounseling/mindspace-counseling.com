@@ -17,7 +17,7 @@ buildFuture = true
 [pagination]
 pagerSize = 10
 
-#googleAnalytics = "G-XXXXXXXXX"
+googleAnalytics = "G-V2C1TMTEC9"
 
 [imaging]
   anchor = 'Center'
